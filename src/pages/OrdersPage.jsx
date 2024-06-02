@@ -28,10 +28,10 @@ const OrdersPage = () => {
 
   const handleCreateOrder = () => {
     CreateOrder({
-      userId: user.id,
+      orderEmail: user.email,
       orderAddress,
       orderPhone,
-      mealIds: orderList.map((meal) => meal.id),
+      mealNames: [orderList.map((meal) => meal.mealName).join(", ")],
     })
       .then((response) => {
         console.log("Order created successfully:", response.data);
@@ -52,9 +52,9 @@ const OrdersPage = () => {
           <label htmlFor="userId">User ID:</label>
           <input
             type="text"
-            id="userId"
-            name="userId"
-            value={user.id}
+            id="orderEmail"
+            name="orderEmail"
+            value={user.email}
             readOnly
           />
           <label htmlFor="orderAddress">Order Address:</label>
@@ -63,8 +63,6 @@ const OrdersPage = () => {
             type="text"
             id="orderAddress"
             name="orderAddress"
-            value=""
-            readOnly
           />
           <label htmlFor="orderPhone">Order Phone:</label>
           <input
@@ -72,8 +70,6 @@ const OrdersPage = () => {
             type="text"
             id="orderPhone"
             name="orderPhone"
-            value=""
-            readOnly
           />
           <label htmlFor="mealIds">Meal IDs:</label>
           <input
@@ -82,13 +78,24 @@ const OrdersPage = () => {
             name="mealIds"
             value={
               orderList.length > 0
-                ? orderList.map((meal) => meal.id).join(", ")
+                ? orderList.map((meal) => meal.mealName).join(", ")
                 : "No meals selected"
             }
             readOnly
           />
         </form>
-        <Button onClick={() => handleCreateOrder()}>Create Order</Button>
+        <Button
+          sx={{
+            backgroundColor: "#D3D5D4",
+            color: "black",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+          onClick={() => handleCreateOrder()}
+        >
+          Create Order
+        </Button>
       </div>
 
       <div className="order-list">
