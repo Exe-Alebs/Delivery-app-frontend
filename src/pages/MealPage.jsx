@@ -6,11 +6,13 @@ import useAuth from "../config/hooks/useAuth";
 import { CreateOrder } from "./../services/orderservice";
 import "./MealPage.scss"; // Import SCSS file
 import { Button } from "@mui/material";
+import { useMealContext } from "../config/context/MealContext";
 
 const MealPage = () => {
   const { id } = useParams();
   const { user, isAuthenticated } = useAuth();
   const [favorites, setFavorites] = useState(user?.favorites || []);
+  const { addToOrderList } = useMealContext();
   const [meal, setMeal] = useState(null);
 
   useEffect(() => {
@@ -19,11 +21,11 @@ const MealPage = () => {
     });
   }, [id]);
 
-  // useEffect(() => {
-  //   if (user) {
-  //     setFavorites(user.favorites);
-  //   }
-  // }, [user]);
+  useEffect(() => {
+    if (user) {
+      setFavorites(user.favorites);
+    }
+  }, [user]);
 
   const handleAddToFavorites = () => {
     addtoFavorites(user.id, id).then((updatedUser) => {
@@ -36,10 +38,8 @@ const MealPage = () => {
     });
   };
 
-  const handleOrder = () => {
-    CreateOrder(user.id, id).then((order) => {
-      console.log(order);
-    });
+  const handleAddToOrder = () => {
+    addToOrderList(meal);
   };
 
   if (!meal) return <div>Loading...</div>;
@@ -64,8 +64,8 @@ const MealPage = () => {
             {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
           </button>
         )}
-        <Button className="order-button" onClick={handleOrder}>
-          Order
+        <Button className="order-button" onClick={() => handleAddToOrder}>
+          Add to Order
         </Button>
       </div>
       <div className="meal-details-container">

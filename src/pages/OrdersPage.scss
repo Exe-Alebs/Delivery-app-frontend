@@ -1,15 +1,51 @@
+/* OrdersPage.scss */
 .orders-page {
-  padding: 20px;
+  display: flex;
+
+  .order-form {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 5px;
+      }
+
+      input {
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+    }
+  }
 
   .order-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
 
+    h2 {
+      margin-bottom: 15px;
+    }
     .order-item {
-      border: 1px solid #ccc;
       padding: 10px;
-      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+ 
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      background-color: #e0e0e0;
+      &:hover {
+        background-color: #e0e0e0;
+      }
+
+    
     }
   }
 }

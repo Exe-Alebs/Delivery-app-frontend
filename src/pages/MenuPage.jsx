@@ -33,9 +33,6 @@ const MenuPage = () => {
   const handleFilterChange = (e) => {
     setFilterByType(e.target.value);
   };
-  useEffect(() => {
-    console.log("meals", meals);
-  }, [meals]);
 
   const handleMealClick = (id) => {
     navigate(`/meal/${id}`);

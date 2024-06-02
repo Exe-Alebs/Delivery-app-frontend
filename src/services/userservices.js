@@ -8,10 +8,10 @@ export const updateUser = (id, params) =>
 export const getUserOrders = (id) => axiosInstance.get(`users/orders/${id}`);
 
 export const addtoFavorites = (userId, mealId, params) =>
-  axiosInstance.post(`users/${userId}favorites/${mealId}`, params);
+  axiosInstance.post(`users/${userId}/favourites/${mealId}`, params);
 
 export const removefromFavorites = (userId, mealId) =>
-  axiosInstance.delete(`users/${userId}favorites/${mealId}`);
+  axiosInstance.delete(`users/${userId}/favourites/${mealId}`);
 
 export const getFavorites = (userId) =>
-  axiosInstance.get(`users/${userId}favorites`);
+  axiosInstance.get(`users/${userId}favourites`);
