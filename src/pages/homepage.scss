@@ -17,6 +17,8 @@
       padding: 20px;
       border-radius: 10px;
       text-align: center;
+      margin-top: 10px;
+      margin-bottom: 60px;
 
       h1 {
         margin-bottom: 20px;
@@ -35,6 +37,9 @@
 
          video {
         margin-bottom: 10px;
+        width: 50%;
+        height: 50%;
+        margin-right: 50px;
       }
 
       input[type="text"] {

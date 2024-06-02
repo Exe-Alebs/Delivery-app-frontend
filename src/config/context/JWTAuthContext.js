@@ -6,6 +6,7 @@ import { RegisterAuth, loginAuth } from "../../services/authservice";
 import { Toast } from "../../utils/toast/toast";
 import {
   clearExtenderStorage,
+  clearLocalStorage,
   getAccessToken,
   isValidToken,
   setExtenderStorage,
@@ -96,6 +97,7 @@ export const AuthProvider = ({ children }) => {
     setSession(null);
     setAuthHeader(null);
     clearExtenderStorage();
+    clearLocalStorage();
     setSessionAuthenticated(false);
     dispatch(setAuthenticated(false));
     dispatch(setUser({}));
