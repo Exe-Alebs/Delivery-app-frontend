@@ -38,7 +38,7 @@ const HomePage = () => {
     if (isAuthenticated) {
       navigate("/orders");
     } else {
-      navigate("/login");
+      navigate("/register");
     }
   };
 

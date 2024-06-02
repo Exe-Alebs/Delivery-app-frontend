@@ -5,13 +5,14 @@ import useAuth from "../config/hooks/useAuth";
 
 const ProfilePage = () => {
   const [userData, setUserData] = useState(null);
-  const [user] = useAuth;
+  const { user } = useAuth();
 
   useEffect(() => {
-    getUser(user._id).then((user) => {
-      setUserData(user);
+    console.log("user", user.id);
+    getUser(user.id).then((res) => {
+      setUserData(res?.data);
     });
-  }, [user._id]);
+  }, [user]);
 
   if (!userData) {
     return <div>Loading...</div>;
