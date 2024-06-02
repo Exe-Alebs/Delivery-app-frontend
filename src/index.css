@@ -1,0 +1,151 @@
+:root {
+  --primary-main: #282F75;
+  --primary-contrast-text: #FFFFFF;
+  --secondary-main: #32475C99;
+  --text-primary: #32475CDE;
+  --text-secondary: #32475C99;
+  --text-disabled: #32475C61;
+  --info-main: #21AEDB;
+  --error-light: #FF5B3F;
+  --error-main: #FF3E1D;
+  --rating-active: #FDB528;
+  --background-secondary: #30334EE0;
+}
+/* @font-face {
+  font-family: generalFont;
+  src: url(./assets/Nunito_Sans/static/Nunito-Regular.ttf);
+}
+@font-face {
+  font-family: BoldFont;
+  src: url(./assets/Nunito_Sans/static/Nunito-Bold.ttf);
+} */
+@font-face {
+  font-family: generalFont;
+  src: url(./assets/fonts/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: BoldFont;
+  src: url(./assets/fonts/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: ExtraBoldFont;
+  src: url(./assets/fonts/static/Inter-ExtraBold.ttf);
+}
+@font-face {
+  font-family: SemiBoldFont;
+  src: url(./assets/fonts/static/Inter-SemiBold.ttf);
+}
+@font-face {
+  font-family: MediumFont;
+  src: url(./assets/fonts/static/Inter-Medium.ttf);
+}
+@font-face {
+  font-family: LightFont;
+  src: url(./assets/fonts/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: ThinFont;
+  src: url(./assets/fonts/static/Inter-Thin.ttf);
+}
+@font-face {
+  font-family: BlackFont;
+  src: url(./assets/fonts/static/Inter-Black.ttf);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: BoldFont !important;
+  color: #101928  ;
+}
+p{
+  font-family: generalFont !important;
+    color: #475367 ;
+}
+
+::-webkit-scrollbar {
+  width: 0%;
+  height: 3px;
+  background-color: transparent !important;
+  scroll-behavior: smooth;
+  position: relative;
+}
+.css-4l9d12-MuiDataGrid-root .MuiDataGrid-row:not(.MuiDataGrid-row--dynamicHeight)>.MuiDataGrid-cell{
+  overflow: hidden ;
+  overflow-x: auto !important;
+ 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #282F75 !important;
+  border-radius: 8px;
+}
+
+.MuiDataGrid-columnHeaderTitleContainerContent div {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #282F75 !important;
+}
+
+.MuiDataGrid-cellContent {
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  color: #32475CDE !important;
+}
+.css-wop1k0-MuiDataGrid-footerContainer{
+  height: 20px !important;
+  min-width: 10px !important;
+  max-height: 20px !important;
+}
+
+.MuiDataGrid-cell {
+  border-bottom: 0.2px solid #babcbe !important;
+}
+
+.MuiDataGrid-columnHeaders {
+  border-bottom: 2px solid rgba(123, 119, 186, 0.23) !important;
+}
+
+
+
+
+.borderless {
+  border: none !important;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: generalFont !important;
+  /* color: #475367 !important; */
+}
+
+.error {
+  color: red;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+p{
+  margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  font-weight: bolder;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}

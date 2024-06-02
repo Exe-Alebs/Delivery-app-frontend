@@ -1,0 +1,33 @@
+.auth-page {
+display: flex;
+flex-direction: column;
+background-color: #fdf0d5 ;
+.auth-page-col1{
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+.auth-page-col2{
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+}
+.auth-page-col3{
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+}
+}
+  .dialog-button{
+                border: none;
+                border-radius: 50%;
+                padding: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                background: -webkit-linear-gradient(left, #9747FF, #1671D9);
+                &:hover{
+                    background: -webkit-linear-gradient(left,#1671D9, #9747FF);
+                }
+
+            }

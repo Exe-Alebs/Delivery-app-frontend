@@ -1,0 +1,12 @@
+.input_component .error {
+    color: #d63815;
+    font-style: italic;
+    font-size: 9px;
+    position: absolute;
+}
+
+.input_component {
+    position: relative;
+}
+
+

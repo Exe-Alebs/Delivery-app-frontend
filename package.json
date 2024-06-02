@@ -1,0 +1,80 @@
+{
+  "name": "delivery-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@faker-js/faker": "^8.3.1",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "^5.14.15",
+    "@mui/material": "^5.15.4",
+    "@mui/system": "^5.14.15",
+    "@mui/x-data-grid": "^6.18.0",
+    "@reduxjs/toolkit": "^1.9.7",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.1",
+    "axios-cache-interceptor": "^1.3.2",
+    "chance": "^1.1.11",
+    "chart.js": "^4.4.1",
+    "clsx": "^2.0.0",
+    "dateformat": "^5.0.3",
+    "dotenv": "^16.3.1",
+    "formik": "^2.4.5",
+    "formiojs": "^4.17.2",
+    "history": "^5.3.0",
+    "jwt-decode": "^4.0.0",
+    "localforage": "^1.10.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-drag-drop-files": "^2.3.10",
+    "react-dropzone": "^14.2.3",
+    "react-hold-on": "^1.0.1",
+    "react-icons": "^4.12.0",
+    "react-redux": "^8.1.3",
+    "react-router-dom": "^6.17.0",
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^9.1.3",
+    "react-tooltip": "5.18.1",
+    "redux-persist": "^6.0.0",
+    "rodal": "^2.1.0",
+    "sass": "^1.70.0",
+    "style-loader": "^3.3.3",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.3.2"
+  },
+  "scripts": {
+    "start": "set PORT=3200 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}
