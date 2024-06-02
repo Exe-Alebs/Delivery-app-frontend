@@ -74,7 +74,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = ({ firstName, lastName, email, password }) => {
-    console.log("register", firstName, lastName, email, password);
     setLoginPageLoad(true);
     setSessionAuthenticated(false);
     dispatch(setLoading(true));

@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { getMealbyId } from "../services/mealservice";
 import { addtoFavorites, removefromFavorites } from "../services/userservices";
 import useAuth from "../config/hooks/useAuth";
-import { CreateOrder } from "./../services/orderservice";
 import "./MealPage.scss"; // Import SCSS file
 import { Button } from "@mui/material";
 import { useMealContext } from "../config/context/MealContext";
@@ -12,8 +11,9 @@ const MealPage = () => {
   const { id } = useParams();
   const { user, isAuthenticated } = useAuth();
   const [favorites, setFavorites] = useState(user?.favorites || []);
-  const { addToOrderList } = useMealContext();
+  const { addToOrderList, orderList } = useMealContext();
   const [meal, setMeal] = useState(null);
+  const [orderUpdated, setOrderUpdated] = useState(false); // Track order updates
 
   useEffect(() => {
     getMealbyId(id).then((res) => {
@@ -40,7 +40,15 @@ const MealPage = () => {
 
   const handleAddToOrder = () => {
     addToOrderList(meal);
+    setOrderUpdated(true); // Set to true when order list is updated
   };
+
+  useEffect(() => {
+    if (orderUpdated) {
+      console.log("Order List Updated:", orderList);
+      setOrderUpdated(false); // Reset after logging
+    }
+  }, [orderList, orderUpdated]);
 
   if (!meal) return <div>Loading...</div>;
 
@@ -64,7 +72,7 @@ const MealPage = () => {
             {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
           </button>
         )}
-        <Button className="order-button" onClick={() => handleAddToOrder}>
+        <Button className="order-button" onClick={handleAddToOrder}>
           Add to Order
         </Button>
       </div>

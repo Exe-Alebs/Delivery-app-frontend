@@ -1,15 +1,21 @@
-// MealContext.js
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const MealContext = createContext();
 
 export const useMealContext = () => useContext(MealContext);
 
 export const MealProvider = ({ children }) => {
-  const [orderList, setOrderList] = useState([]);
+  const [orderList, setOrderList] = useState(() => {
+    const savedOrderList = localStorage.getItem("orderList");
+    return savedOrderList ? JSON.parse(savedOrderList) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("orderList", JSON.stringify(orderList));
+  }, [orderList]);
 
   const addToOrderList = (meal) => {
-    setOrderList([...orderList, meal]);
+    setOrderList((prevOrderList) => [...prevOrderList, meal]);
   };
 
   return (

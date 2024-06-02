@@ -25,6 +25,21 @@
                    color: black;
                }
            }
+            .order-counter {
+        display: flex;
+        align-items: center;
+
+        .order-count {
+          background-color: red;
+          border-radius: 50%;
+          color: white;
+          padding: 0 6px;
+          font-size: 14px;
+          position: absolute;
+          top: -10px;
+          right: -10px;
+        }
+      }
        }
    }
 }

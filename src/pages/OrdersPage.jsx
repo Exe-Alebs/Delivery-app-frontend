@@ -9,6 +9,8 @@ import { Button } from "@mui/material";
 const OrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState(null);
+  const [orderAddress, setOrderAddress] = useState("");
+  const [orderPhone, setOrderPhone] = useState("");
   const { user } = useAuth();
   const { orderList } = useMealContext();
 
@@ -27,8 +29,8 @@ const OrdersPage = () => {
   const handleCreateOrder = () => {
     CreateOrder({
       userId: user.id,
-      orderAddress: user.address,
-      orderPhone: user.phone,
+      orderAddress,
+      orderPhone,
       mealIds: orderList.map((meal) => meal.id),
     })
       .then((response) => {
@@ -57,6 +59,7 @@ const OrdersPage = () => {
           />
           <label htmlFor="orderAddress">Order Address:</label>
           <input
+            onChange={(e) => setOrderAddress(e.target.value)}
             type="text"
             id="orderAddress"
             name="orderAddress"
@@ -65,6 +68,7 @@ const OrdersPage = () => {
           />
           <label htmlFor="orderPhone">Order Phone:</label>
           <input
+            onChange={(e) => setOrderPhone(e.target.value)}
             type="text"
             id="orderPhone"
             name="orderPhone"
@@ -76,7 +80,11 @@ const OrdersPage = () => {
             type="text"
             id="mealIds"
             name="mealIds"
-            value={orderList}
+            value={
+              orderList.length > 0
+                ? orderList.map((meal) => meal.id).join(", ")
+                : "No meals selected"
+            }
             readOnly
           />
         </form>
